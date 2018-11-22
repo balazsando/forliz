@@ -35,11 +35,13 @@ public class TaskEntry implements Comparable<TaskEntry>
 
     @Override public int compareTo(TaskEntry taskEntry)
     {
+        //Using built in LocalDate comparator
         return date.compareTo(taskEntry.date);
     }
 
     @Override public String toString()
     {
+        //Printing in desired format
         return String.format("%02d %02d \"%s\"", date.getDayOfMonth(), date.getMonthValue(), task);
     }
 }
