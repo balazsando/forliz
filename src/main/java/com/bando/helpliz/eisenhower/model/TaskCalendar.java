@@ -6,10 +6,10 @@ import java.util.Arrays;
 
 public class TaskCalendar extends ArrayList<TaskEntry>
 {
-    public void add(LocalDate date, String task)
+    public void add(int year, int month, int day, String task)
     {
         //Addition shortcut
-        this.add(new TaskEntry(date, task));
+        this.add(new TaskEntry(year, month, day, task));
     }
 
     @Override public boolean add(TaskEntry taskEntry)

@@ -18,11 +18,11 @@ public class Main {
         calendar.add(entry1);
 
         //Shortcut addition
-        TaskEntry entry2 = new TaskEntry(LocalDate.of(2018, 11, 22), "Do the dishes");
+        TaskEntry entry2 = new TaskEntry(2018, 11, 22, "Do the dishes");
         calendar.add(entry2);
 
         //One liner
-        calendar.add(LocalDate.of(2019, 2, 18), "Take out trash");
+        calendar.add(2019, 2, 18, "Take out trash");
 
         //Sorted result
         System.out.println(calendar);

@@ -7,6 +7,12 @@ public class TaskEntry implements Comparable<TaskEntry>
     private LocalDate date;
     private String task;
 
+    public TaskEntry(int year, int month, int day, String task)
+    {
+        this.date = LocalDate.of(year, month, day);
+        this.task = task;
+    }
+
     public TaskEntry(LocalDate date, String task)
     {
         this.date = date;
