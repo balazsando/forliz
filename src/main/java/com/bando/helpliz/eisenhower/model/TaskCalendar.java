@@ -11,8 +11,6 @@ public class TaskCalendar extends ArrayList<TaskEntry>
     {
         try
         {
-            TaskEntry entry = new TaskEntry(year, month, day, task);
-            //Addition shortcut
             this.add(new TaskEntry(year, month, day, task));
         }
         catch (NumberFormatException e)
