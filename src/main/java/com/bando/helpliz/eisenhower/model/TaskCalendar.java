@@ -1,15 +1,24 @@
 package com.bando.helpliz.eisenhower.model;
 
-import java.time.LocalDate;
+import com.sun.javaws.exceptions.InvalidArgumentException;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class TaskCalendar extends ArrayList<TaskEntry>
 {
-    public void add(int year, int month, int day, String task)
+    public void add(String year, String month, String day, String task)
     {
-        //Addition shortcut
-        this.add(new TaskEntry(year, month, day, task));
+        try
+        {
+            TaskEntry entry = new TaskEntry(year, month, day, task);
+            //Addition shortcut
+            this.add(new TaskEntry(year, month, day, task));
+        }
+        catch (IllegalArgumentException e)
+        {
+            System.out.println("Invalid input: " + e);
+        }
     }
 
     @Override public boolean add(TaskEntry taskEntry)
