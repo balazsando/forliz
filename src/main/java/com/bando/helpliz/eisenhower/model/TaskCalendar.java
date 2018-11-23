@@ -15,7 +15,7 @@ public class TaskCalendar extends ArrayList<TaskEntry>
             //Addition shortcut
             this.add(new TaskEntry(year, month, day, task));
         }
-        catch (IllegalArgumentException e)
+        catch (NumberFormatException e)
         {
             System.out.println("Invalid input: " + e);
         }

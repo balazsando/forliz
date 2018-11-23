@@ -9,7 +9,7 @@ public class TaskEntry implements Comparable<TaskEntry>
 
     public TaskEntry(String year, String month, String day, String task)
     {
-        this.date = LocalDate.of(getInt(year), getMonth(month), getDay(day));
+        this.date = LocalDate.of(Integer.parseInt(year), getMonth(month), getDay(day));
         this.task = task;
     }
 
@@ -53,27 +53,15 @@ public class TaskEntry implements Comparable<TaskEntry>
 
     private static int getDay(String day)
     {
-        int ret = getInt(day);
-        if(ret < 1 || ret > 31) throw new IllegalArgumentException("Day must be between 1 and 31");
+        int ret = Integer.parseInt(day);
+        if(ret < 1 || ret > 31) throw new NumberFormatException("Day must be between 1 and 31");
         return ret;
     }
 
-    private static int getMonth(String day)
+    private static int getMonth(String month)
     {
-        int ret = getInt(day);
-        if(ret < 1 || ret > 12) throw new IllegalArgumentException("Month must be between 1 and 12");
+        int ret = Integer.parseInt(month);
+        if(ret < 1 || ret > 12) throw new NumberFormatException("Month must be between 1 and 12");
         return ret;
-    }
-
-    private static int getInt(String num)
-    {
-        try
-        {
-            return Integer.parseInt(num);
-        }
-        catch (NumberFormatException e)
-        {
-            throw new IllegalArgumentException("Not a number");
-        }
     }
 }
