@@ -1,7 +1,5 @@
 package com.bando.helpliz.eisenhower.model;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -13,7 +11,7 @@ public class TaskCalendar extends ArrayList<TaskEntry>
         {
             this.add(new TaskEntry(year, month, day, task));
         }
-        catch (NumberFormatException e)
+        catch (Exception e)
         {
             System.out.println("Invalid input: " + e);
         }
@@ -22,13 +20,19 @@ public class TaskCalendar extends ArrayList<TaskEntry>
     @Override public boolean add(TaskEntry taskEntry)
     {
         boolean ret = super.add(taskEntry);
+
         //Sorting the list after each addition
-        if(ret) this.sort(TaskEntry::compareTo);
+        if (ret)
+        {
+            this.sort(TaskEntry::compareTo);
+        }
+
         return ret;
     }
 
     @Override public String toString()
     {
+
         //Pretty printing for easier digestion
         return Arrays.toString(this.toArray());
     }
