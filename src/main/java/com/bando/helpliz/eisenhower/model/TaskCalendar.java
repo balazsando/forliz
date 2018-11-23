@@ -20,19 +20,13 @@ public class TaskCalendar extends ArrayList<TaskEntry>
     @Override public boolean add(TaskEntry taskEntry)
     {
         boolean ret = super.add(taskEntry);
-
         //Sorting the list after each addition
-        if (ret)
-        {
-            this.sort(TaskEntry::compareTo);
-        }
-
+        if(ret) this.sort(TaskEntry::compareTo);
         return ret;
     }
 
     @Override public String toString()
     {
-
         //Pretty printing for easier digestion
         return Arrays.toString(this.toArray());
     }
