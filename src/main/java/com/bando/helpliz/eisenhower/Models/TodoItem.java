@@ -36,9 +36,9 @@ public class TodoItem implements Comparable<TodoItem>
         isDone = false;
     }
 
-    public boolean active()
+    public boolean getIsDone()
     {
-        return !isDone;
+        return isDone;
     }
 
     public boolean isUrgent()

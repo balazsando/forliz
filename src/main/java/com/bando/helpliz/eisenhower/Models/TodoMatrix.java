@@ -33,6 +33,7 @@ public class TodoMatrix
 
     public void addItem(String title, LocalDate deadline, boolean isImportant)
     {
+        TodoItem item = new TodoItem(title, deadline);
     }
 
     public void addItemsFromFile(String fileName)

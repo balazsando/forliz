@@ -5,7 +5,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
-import java.util.stream.Collectors;
 
 public class TodoQuarter
 {
@@ -33,7 +32,7 @@ public class TodoQuarter
 
     public void archiveItems()
     {
-        todoItems = todoItems.stream().filter(TodoItem::active).collect(Collectors.toList());
+        todoItems.removeIf(TodoItem::getIsDone);
     }
 
     public TodoItem getItem(int index)
